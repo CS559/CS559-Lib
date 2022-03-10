@@ -300,7 +300,7 @@ export class LabelSlider {
     this.label.setAttribute("for", id + "-text");
     this.label.setAttribute(
       "style",
-      "padding:5px; width:40px; display:inline-block;"
+      `padding:5px; width:${width-80}px; display:inline-block;`
     );
     this.label.innerText = name;
     this.div.appendChild(this.label);
@@ -316,7 +316,7 @@ export class LabelSlider {
     this.div.appendChild(this.range);
     this.range.id = id + "-slider";
     this.range.setAttribute("type", "range");
-    this.range.setAttribute("style", `width:${width - 120}px`);
+    this.range.setAttribute("style", `width:${width}px`);
     // give default values for range
     this.setRange(min, max, step);
 
