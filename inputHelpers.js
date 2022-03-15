@@ -295,15 +295,18 @@ export class LabelSlider {
     let id = params.id || name;
 
     this.div = document.createElement("div");
+    this.div.setAttribute("style", "margin-top: 8px");
 
     this.label = document.createElement("label");
     this.label.setAttribute("for", id + "-text");
     this.label.setAttribute(
       "style",
-      `padding:5px; width:${width-80}px; display:inline-block;`
+      `padding:2px; width:40px; display:inline-block;`
     );
     this.label.innerText = name;
     this.div.appendChild(this.label);
+
+    this.div.appendChild(document.createElement("br"))
 
     this.text = document.createElement("input");
     this.div.appendChild(this.text);
