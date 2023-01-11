@@ -8,7 +8,7 @@ Students are welcome to read the code. They should not modify it (for class use)
 
 These files were written by Michael Gleicher for the class, with contributions from the course staff.
 
-Note: this is the 2022 version. In the past, each version had a different name.
+Note: this is the 2022(3) version. In the past, each version had a different name.
 
 ##  License
 
