@@ -9,7 +9,10 @@
  * @param {HTMLElement} referenceNode
  */
 export function insertAfter(el, referenceNode) {
-  referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+    if (referenceNode.parentNode)
+        referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+    else
+        console.log("insertAfter fails (no parent)");
 }
 
 /**
@@ -27,7 +30,7 @@ export function insertAfter(el, referenceNode) {
  * put it
  * 
  * @param {HTMLElement} el 
- * @param {WhereSpec} [where] 
+ * @param {WhereSpec | null} [where] 
  */
 export function insertElement(el, where = undefined) {
   if (!where) {
@@ -127,7 +130,7 @@ export function makeBoxDiv(params, where) {
 /**
  * create an empty DIV with its style set to allow for Flex layout
  * 
- * @param {WhereSpec} [where] 
+ * @param {WhereSpec | null} [where] 
  */
 export function makeFlexDiv(where) {
   let style = "display: flex; flex-direction: row; flex-wrap:wrap";
