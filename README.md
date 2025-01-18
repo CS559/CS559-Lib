@@ -1,3 +1,5 @@
+**warning: use the "main" branch - the master branch is just for legacy compatibility"
+
 # CS 559 Library for Workbooks
 
 This directory contains files used by CS559 workbooks. It is included in workbooks.
