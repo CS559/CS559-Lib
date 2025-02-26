@@ -30,7 +30,7 @@ export function insertAfter(el, referenceNode) {
  * put it
  * 
  * @param {HTMLElement} el 
- * @param {WhereSpec | null} [where] 
+ * @param {WhereSpec | HTMLElement | null} [where] 
  */
 export function insertElement(el, where = undefined) {
   if (!where) {
@@ -104,7 +104,7 @@ export function makeButton(str, where) {
  * flex (binary - whether this should allow for layout inside)
  * 
  * @param {Object} [params] 
- * @param {WhereSpec} [where] 
+ * @param {WhereSpec | HTMLElement | null} [where] 
  */
 export function makeBoxDiv(params, where) {
   if (!params) params = {};
