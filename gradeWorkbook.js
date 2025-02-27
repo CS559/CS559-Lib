@@ -64,7 +64,7 @@ export function load() {
                         check = document.getElementById("c" + i);
                         field = document.getElementById("t" + i);
                         if (check && field) {
-                            if (line.trim().toLowerCase().startsWith("[x]")) check.checked = true;
+                            if (line.trim().toLowerCase().replaceAll(" ", "").startsWith("[x]")) check.checked = true;
                             field.value = line.substring(line.indexOf("]:") + 2).trim().replace(" ; ", "\n").replace("`", "'");
                             field.rows = String(Math.ceil(field.value.length / 20 + 1));
                         }
