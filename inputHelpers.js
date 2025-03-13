@@ -298,7 +298,7 @@ export class LabelSlider {
     let id = params.id || name;
 
     this.div = document.createElement("div");
-    this.div.setAttribute("style", "margin-top: 8px");
+    this.div.setAttribute("style", "margin-top: 8px; display: flex; flex-direction: row; ");
 
     this.label = document.createElement("label");
     this.label.setAttribute("for", id + "-text");
@@ -313,16 +313,17 @@ export class LabelSlider {
     this.div.appendChild(this.range);
     this.range.id = id + "-slider";
     this.range.setAttribute("type", "range");
-    this.range.setAttribute("style", `width:${width}px`);
-    // give default values for range
-    this.setRange(min, max, step);
+    this.range.setAttribute("style", `width:40%;`);
 
     this.text = document.createElement("input");
     this.div.appendChild(this.text);
     this.text.id = id + "-text";
     this.text.setAttribute("type", "text");
-    //this.text.setAttribute("style", "width:60px");
+    this.text.setAttribute("style", "width:40px");
     this.text.setAttribute("readonly", "1");
+
+    // give default values for range
+    this.setRange(min, max, step);
 
     this.range.value = String(initial);
 
