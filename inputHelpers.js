@@ -304,19 +304,10 @@ export class LabelSlider {
     this.label.setAttribute("for", id + "-text");
     this.label.setAttribute(
       "style",
-      `padding:2px; width:40px; display:inline-block;`
+      `padding:2px; display:inline-block;`
     );
     this.label.innerText = name;
     this.div.appendChild(this.label);
-
-    this.div.appendChild(document.createElement("br"))
-
-    this.text = document.createElement("input");
-    this.div.appendChild(this.text);
-    this.text.id = id + "-text";
-    this.text.setAttribute("type", "text");
-    this.text.setAttribute("style", "width:40px");
-    this.text.setAttribute("readonly", "1");
 
     this.range = document.createElement("input");
     this.div.appendChild(this.range);
@@ -325,6 +316,13 @@ export class LabelSlider {
     this.range.setAttribute("style", `width:${width}px`);
     // give default values for range
     this.setRange(min, max, step);
+
+    this.text = document.createElement("input");
+    this.div.appendChild(this.text);
+    this.text.id = id + "-text";
+    this.text.setAttribute("type", "text");
+    //this.text.setAttribute("style", "width:60px");
+    this.text.setAttribute("readonly", "1");
 
     this.range.value = String(initial);
 
