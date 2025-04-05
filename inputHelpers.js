@@ -298,22 +298,18 @@ export class LabelSlider {
     let id = params.id || name;
 
     this.div = document.createElement("div");
-    this.div.setAttribute("style", "margin-top: 8px; display: flex; flex-direction: row; ");
+    this.div.setAttribute("style", "margin-top: 8px");
 
     this.label = document.createElement("label");
     this.label.setAttribute("for", id + "-text");
     this.label.setAttribute(
       "style",
-      `padding:2px; display:inline-block;`
+      `padding:2px; width:40px; display:` + (params.display || "inline-block") + `;`
     );
     this.label.innerText = name;
     this.div.appendChild(this.label);
 
-    this.range = document.createElement("input");
-    this.div.appendChild(this.range);
-    this.range.id = id + "-slider";
-    this.range.setAttribute("type", "range");
-    this.range.setAttribute("style", `width:40%;`);
+    this.div.appendChild(document.createElement("br"))
 
     this.text = document.createElement("input");
     this.div.appendChild(this.text);
@@ -322,6 +318,11 @@ export class LabelSlider {
     this.text.setAttribute("style", "width:40px");
     this.text.setAttribute("readonly", "1");
 
+    this.range = document.createElement("input");
+    this.div.appendChild(this.range);
+    this.range.id = id + "-slider";
+    this.range.setAttribute("type", "range");
+    this.range.setAttribute("style", `width:${width}px`);
     // give default values for range
     this.setRange(min, max, step);
 
