@@ -7,7 +7,7 @@ function lerp(u, p1, p2) {
 }
 
 /**
- * Just evaluate the Bezier curve using DeCastlejau
+ * Just evaluate the Bezier curve using DeCasteljau
  * Slow and inefficent because it builds all the lists, but simple
  * @param {*} pts
  * @param {*} param
@@ -26,7 +26,7 @@ function evaluate(pts, param) {
 }
 
 /**
- * Draw the DeCastlejau construction for a set of points
+ * Draw the DeCasteljau construction for a set of points
  *
  * possibly show the resulting curve (sample it at nsamps)
  *
