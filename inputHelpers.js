@@ -286,6 +286,8 @@ export class LabelSlider {
    * @param {function} [params.oninput]
    * @param {WhereSpec} [params.where]
    * @param {string} [params.id]
+  * @param {string} [params.display]
+  * @param {boolean} [params.adjusted]
    */
   constructor(name, params) {
     let min = params.min || 0;
