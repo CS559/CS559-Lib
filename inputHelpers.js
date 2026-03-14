@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 // @ts-check
 
 // useful utility function for creating HTML

@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 // @ts-check
 /**
  *  Simple thing to make a list of points in a Canvas draggable

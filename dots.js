@@ -8,7 +8,6 @@
  */
 
 // @ts-check
-/* jshint -W069, esversion:6 */
 
 import {
     draggablePoints
