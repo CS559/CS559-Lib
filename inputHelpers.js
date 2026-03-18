@@ -297,33 +297,41 @@ export class LabelSlider {
     let width = params.width || 250;
 
     let id = params.id || name;
+    const displayMode = params.display || "inline-block";
+    const compactRow = displayMode === "inline";
 
     this.div = document.createElement("div");
-    this.div.setAttribute("style", "margin-top: 8px");
+    if (compactRow) {
+      this.div.setAttribute("style", "margin-top: 8px; display:flex; align-items:center; gap:6px");
+    } else {
+      this.div.setAttribute("style", "margin-top: 8px");
+    }
 
     this.label = document.createElement("label");
     this.label.setAttribute("for", id + "-text");
     this.label.setAttribute(
       "style",
-      `padding:2px; width:40px; display:` + (params.display || "inline-block") + `;`
+      `padding:2px; width:40px; display:${compactRow ? "inline-block" : displayMode};`
     );
     this.label.innerText = name;
     this.div.appendChild(this.label);
 
-    this.div.appendChild(document.createElement("br"))
+    if (!compactRow) {
+      this.div.appendChild(document.createElement("br"));
+    }
 
     this.text = document.createElement("input");
     this.div.appendChild(this.text);
     this.text.id = id + "-text";
     this.text.setAttribute("type", "text");
-    this.text.setAttribute("style", "width:40px");
+    this.text.setAttribute("style", compactRow ? "width:46px; flex:0 0 auto" : "width:40px");
     this.text.setAttribute("readonly", "1");
 
     this.range = document.createElement("input");
     this.div.appendChild(this.range);
     this.range.id = id + "-slider";
     this.range.setAttribute("type", "range");
-    this.range.setAttribute("style", `width:${width}px`);
+    this.range.setAttribute("style", compactRow ? `width:${width}px; flex:1 1 auto` : `width:${width}px`);
     // give default values for range
     this.setRange(min, max, step);
 
